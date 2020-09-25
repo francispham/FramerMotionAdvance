@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Fade from './Fade';
 import "./styles.css";
 
 export default function App() {
@@ -11,12 +12,12 @@ export default function App() {
       </header>
       <main className="layout">
         <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
-        {isToggled && (
+        <Fade isActive={isToggled}>
           <div className="card">
             <h4>Post Number one</h4>
             <p>this is inside the card</p>
           </div>
-        )}
+        </Fade>
       </main>
     </div>
   );
