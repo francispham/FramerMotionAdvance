@@ -25,7 +25,8 @@ const Routes = () => {
           display: "flex",
           justifyContent: y > 20 ? "flex-end" : "flex-start"
         }}>
-          <h1 className="fake-logo">FRAMER MOTION ADVANCE</h1>
+          {/* https://www.framer.com/api/motion/component/#layout-animation */}
+          <motion.h1 layout className="fake-logo">FRAMER MOTION ADVANCE</motion.h1>
         </div>
         <div style={{ flex: 3, textAlign: "end" }} >
           <Link to="/">APP</Link>
