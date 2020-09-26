@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Route, Switch, Link, useLocation } from "react-router-dom";
 import useWindowScrollPosition from "@rehooks/window-scroll-position";
 
@@ -15,7 +15,11 @@ const Routes = () => {
 
   return (
     <>
-      <header>
+      <motion.header animate={{ 
+        background: y > 20 ? "var(--headerBackground)" : "var(--background)",
+        boxShadow: y > 20 ? "var(--level-2)" : "none",
+        color: y > 20 ? "white" : "#333"
+      }}>
         <div style={{
           flex: 4,
           display: "flex",
@@ -27,7 +31,7 @@ const Routes = () => {
           <Link to="/">APP</Link>
           <Link to="/GridGallery">GRID GALLERY</Link>
         </div>
-      </header>
+      </motion.header>
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={App} />

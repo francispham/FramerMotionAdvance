@@ -88,8 +88,12 @@ header {
   padding: 0 var(--containerPadding);
 }
 
+header > * {
+  color: inherit;
+}
+
 header a {
-  color: white;
+  color: inherit;
   text-decoration: none;
 }
 
