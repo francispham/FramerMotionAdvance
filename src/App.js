@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 import Fade from './Fade';
 import Slide from './Slide';
@@ -8,10 +9,12 @@ export default function App() {
   const [isToggled, setIsToggled] = useState(false);
   const [isSlideToggled, setIsSlideToggled] = useState(false);
   return (
-    <div className="App">
-      <header>
-        <h1 className="fake-logo">Framer Motion Advance</h1>
-      </header>
+    <motion.div 
+      className="App"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: [1, 0, 1] }}
+      exit={{ opacity: 0, x: 100 }}
+    >
       <main className="layout">
         <button onClick={() => setIsToggled(!isToggled)}>Fade</button>
         <Fade isActive={isToggled}>
@@ -40,6 +43,6 @@ export default function App() {
           </div>
         </Slide>
       </main>
-    </div>
+    </motion.div>
   );
 }

@@ -88,12 +88,12 @@ header {
   padding: 0 var(--containerPadding);
 }
 
-header nav a {
+header a {
   color: white;
   text-decoration: none;
 }
 
-header nav a + a {
+header a + a {
   margin-left: 10px;
 }
 

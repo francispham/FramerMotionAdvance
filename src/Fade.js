@@ -8,7 +8,7 @@ const Fade = ({ children, isActive }) => <AnimatePresence>
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
   >{children}</motion.div>}
-  <h1>Francis</h1>
+  <h2>Francis</h2>
 </AnimatePresence>;
 
 export default Fade
