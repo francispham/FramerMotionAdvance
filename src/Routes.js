@@ -1,20 +1,30 @@
 import React from "react";
-import { Route, Switch, Link, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { Route, Switch, Link, useLocation } from "react-router-dom";
+import useWindowScrollPosition from "@rehooks/window-scroll-position";
 
 import App from "./App";
 import GridGallery from "./GridGallery";
 
 const Routes = () => {
   let location = useLocation();
-  console.log('location:', location);
+  const { y } = useWindowScrollPosition({
+    throttle: 500
+  });
+  console.log('y:', y);
 
   return (
     <>
       <header>
-        <h1 className="fake-logo">FRAMER MOTION ADVANCE</h1>
-        <div>
-          <Link to="/">APP</Link>{" "}
+        <div style={{
+          flex: 4,
+          display: "flex",
+          justifyContent: y > 20 ? "flex-end" : "flex-start"
+        }}>
+          <h1 className="fake-logo">FRAMER MOTION ADVANCE</h1>
+        </div>
+        <div style={{ flex: 3, textAlign: "end" }} >
+          <Link to="/">APP</Link>
           <Link to="/GridGallery">GRID GALLERY</Link>
         </div>
       </header>
