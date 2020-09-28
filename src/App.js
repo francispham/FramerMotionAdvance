@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import Fade from './Fade';
 import Slide from './Slide';
+import Scale from './Scale';
 import "./styles.css";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       exit={{ opacity: 0, x: 100 }}
     >
       <main className="layout">
+        <Scale />
         <button onClick={() => setIsToggled(!isToggled)}>Fade</button>
         <Fade isActive={isToggled}>
           <div className="card">
