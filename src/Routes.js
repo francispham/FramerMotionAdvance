@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Route, Switch, Link, useLocation } from "react-router-dom";
 import useWindowScrollPosition from "@rehooks/window-scroll-position";
 
+import "./styles.css";
 import App from "./App";
+import Loading from "./Loading";
 import GridGallery from "./GridGallery";
 
 const Routes = () => {
@@ -33,7 +35,8 @@ const Routes = () => {
           <Link to="/GridGallery">GRID GALLERY</Link>
         </div>
       </motion.header>
-      <AnimatePresence exitBeforeEnter>
+      <Loading />
+      <AnimatePresence className="App" exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={App} />
           <Route exact path="/GridGallery" component={GridGallery} />

@@ -4,13 +4,12 @@ import { motion } from "framer-motion";
 import Fade from './Fade';
 import Slide from './Slide';
 import Scale from './Scale';
-import "./styles.css";
 
 export default function App() {
   const [isToggled, setIsToggled] = useState(false);
   const [isSlideToggled, setIsSlideToggled] = useState(false);
   return (
-    <motion.div 
+    <motion.div
       className="App"
       initial={{ opacity: 0 }}
       animate={{ opacity: [1, 0, 1] }}
