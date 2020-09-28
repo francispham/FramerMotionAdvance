@@ -102,6 +102,12 @@ header a + a {
 }
 
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
   --footerTextColor: var(--lightGrey);
   color: var(--footerTextColor);
   background: var(--footerBackground);

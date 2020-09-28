@@ -1,5 +1,5 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Route, Switch, Link, useLocation } from "react-router-dom";
 import useWindowScrollPosition from "@rehooks/window-scroll-position";
 
@@ -9,19 +9,23 @@ import Loading from "./Loading";
 import GridGallery from "./GridGallery";
 
 const Routes = () => {
+  const [ isLoading, setIsLoading ] = useState(false);
   let location = useLocation();
   const { y } = useWindowScrollPosition({
     throttle: 500
   });
-  console.log('y:', y);
 
   return (
     <>
-      <motion.header animate={{ 
-        background: y > 20 ? "var(--headerBackground)" : "var(--background)",
-        boxShadow: y > 20 ? "var(--level-2)" : "none",
-        color: y > 20 ? "white" : "#333"
-      }}>
+      <motion.header 
+        animate={{ 
+          background: y > 20 ? "var(--headerBackground)" : "var(--background)",
+        }}
+        style={{
+          boxShadow: y > 20 ? "var(--level-2)" : "none",
+          color: y > 20 ? "white" : "#333"
+        }}
+      >
         <div style={{
           flex: 4,
           display: "flex",
@@ -35,13 +39,30 @@ const Routes = () => {
           <Link to="/GridGallery">GRID GALLERY</Link>
         </div>
       </motion.header>
-      <Loading />
+      {/* https://www.framer.com/api/motion/animate-presence/ */}
       <AnimatePresence className="App" exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={App} />
           <Route exact path="/GridGallery" component={GridGallery} />
         </Switch>
       </AnimatePresence>
+      {/* https://www.framer.com/api/motion/animate-shared-layout/ */}
+      <AnimateSharedLayout>
+        <AnimatePresence>
+          {isLoading && <Loading setIsLoading = {setIsLoading}/>}
+        </AnimatePresence>
+        <motion.footer 
+          layoutId="footer"
+          onClick={() => setIsLoading(true)}
+        >
+          <motion.h1 
+            layoutId="logo" 
+            className="fake-logo"
+          >
+            Animating Loading Feature
+          </motion.h1>
+        </motion.footer>
+      </AnimateSharedLayout>
     </>
   );
 };
