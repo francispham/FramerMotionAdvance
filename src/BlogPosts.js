@@ -22,6 +22,12 @@ const BlogPosts = () => {
               drag="y"
               // This alow the Drawer to move back!
               dragConstraints={{ top: 0, bottom: 0 }}
+              // Drag to Close the Drawer
+              onDragEnd={(event, info) => {
+                console.log('event:', event);
+                console.log('info:', info);
+                info.offset.y > 300 && setIsActive(false);
+              }}
               className="drawer-wrapper"
             >
               <motion.div
