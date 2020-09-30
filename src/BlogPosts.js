@@ -22,7 +22,7 @@ const BlogPosts = () => {
           isActive={isActive}
           setIsActive={setIsActive}
         >
-          <h1>I am the Drawer</h1>
+          <h1>Animating Draggable Drawer Feature</h1>
         </Drawer>
         {posts.map(post => 
           <div className="card" key={post}>
@@ -35,6 +35,6 @@ const BlogPosts = () => {
   )
 }
 
-export default BlogPosts
+export default BlogPosts;
 
 const posts = [0, 1, 2, 3, 4, 5, 6, 7, 8];
