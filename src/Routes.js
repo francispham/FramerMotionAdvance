@@ -7,6 +7,7 @@ import "./styles.css";
 import App from "./App";
 import Loading from "./Loading";
 import GridGallery from "./GridGallery";
+import BlogPosts from "./BlogPosts";
 
 const Routes = () => {
   const [ isLoading, setIsLoading ] = useState(false);
@@ -37,6 +38,7 @@ const Routes = () => {
         <div style={{ flex: 3, textAlign: "end" }} >
           <Link to="/">APP</Link>
           <Link to="/GridGallery">GRID GALLERY</Link>
+          <Link to="/BlogPosts">BLOG POSTS</Link>
         </div>
       </motion.header>
       {/* https://www.framer.com/api/motion/animate-presence/ */}
@@ -44,6 +46,7 @@ const Routes = () => {
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={App} />
           <Route exact path="/GridGallery" component={GridGallery} />
+          <Route exact path="/BlogPosts" component={BlogPosts} />
         </Switch>
       </AnimatePresence>
       {/* https://www.framer.com/api/motion/animate-shared-layout/ */}
