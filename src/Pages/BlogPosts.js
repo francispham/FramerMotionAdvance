@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 
 import { Drawer, DragItem } from '../Components';
+import { usePositionReorder } from '../Hooks';
 
 const BlogPosts = () => {
   const [isActive, setIsActive] = useState(false);
+
+  const [ order, updatePosition, updateOrder ] = usePositionReorder(posts);
 
   return (
     <motion.div 
@@ -24,15 +27,19 @@ const BlogPosts = () => {
         >
           <h1>Animating Draggable Drawer Feature</h1>
         </Drawer>
-        {posts.map(post => 
-          <DragItem post={post} key={post} />
+        {order.map((post, index) => 
+          <DragItem
+            key={post} 
+            post={post} 
+            index={index}
+            updateOrder={updateOrder}
+            updatePosition={updatePosition}
+          />
         )}
       </main>
     </motion.div>
-  )
-}
-
-
+  );
+};
 
 export default BlogPosts;
 
