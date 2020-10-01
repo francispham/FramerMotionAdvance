@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import Fade from './Fade';
-import Slide from './Slide';
-import Scale from './Scale';
+import { Fade, Slide, Scale } from '../Components';
 
 export default function App() {
   const [isToggled, setIsToggled] = useState(false);
@@ -46,4 +44,4 @@ export default function App() {
       </main>
     </motion.div>
   );
-}
+};

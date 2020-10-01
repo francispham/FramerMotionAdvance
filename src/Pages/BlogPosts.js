@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 
-import Drawer from './Drawer';
+import { Drawer } from '../Components';
 
 const BlogPosts = () => {
   const [isActive, setIsActive] = useState(false);

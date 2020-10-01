@@ -3,11 +3,12 @@ import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Route, Switch, Link, useLocation } from "react-router-dom";
 import useWindowScrollPosition from "@rehooks/window-scroll-position";
 
+import App from "./Pages/App";
+import GridGallery from "./Pages/GridGallery";
+import BlogPosts from "./Pages/BlogPosts";
+
 import "./styles.css";
-import App from "./App";
-import Loading from "./Loading";
-import GridGallery from "./GridGallery";
-import BlogPosts from "./BlogPosts";
+import { Loading } from "./Components";
 
 const Routes = () => {
   const [ isLoading, setIsLoading ] = useState(false);

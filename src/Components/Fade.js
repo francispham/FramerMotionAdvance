@@ -11,4 +11,4 @@ const Fade = ({ children, isActive }) => <AnimatePresence>
   <h2>Francis</h2>
 </AnimatePresence>;
 
-export default Fade
+export default Fade;

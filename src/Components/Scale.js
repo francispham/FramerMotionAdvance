@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const Scale = () => {
   const [isToggled, setIsToggled] = useState(false);
+
   return (
     <div>
       <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
@@ -19,7 +20,7 @@ const Scale = () => {
         )}
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 export default Scale;

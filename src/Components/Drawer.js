@@ -45,7 +45,7 @@ const Drawer = ({ isActive, setIsActive, children }) => {
         </>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
 
 export default Drawer;
