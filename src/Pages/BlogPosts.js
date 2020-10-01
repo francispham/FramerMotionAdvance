@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 
-import { Drawer } from '../Components';
+import { Drawer, DragItem } from '../Components';
 
 const BlogPosts = () => {
   const [isActive, setIsActive] = useState(false);
@@ -25,15 +25,14 @@ const BlogPosts = () => {
           <h1>Animating Draggable Drawer Feature</h1>
         </Drawer>
         {posts.map(post => 
-          <div className="card" key={post}>
-              <h4>Post Number one</h4>
-              <p>this is inside the card</p>
-          </div>
+          <DragItem post={post} key={post} />
         )}
       </main>
     </motion.div>
   )
 }
+
+
 
 export default BlogPosts;
 
