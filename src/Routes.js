@@ -6,6 +6,7 @@ import useWindowScrollPosition from "@rehooks/window-scroll-position";
 import App from "./Pages/App";
 import GridGallery from "./Pages/GridGallery";
 import BlogPosts from "./Pages/BlogPosts";
+import ItemListings from "./Pages/ItemListings";
 
 import "./styles.css";
 import { Loading } from "./Components";
@@ -40,6 +41,7 @@ const Routes = () => {
           <Link to="/">APP</Link>
           <Link to="/GridGallery">GRID GALLERY</Link>
           <Link to="/BlogPosts">BLOG POSTS</Link>
+          <Link to="/ItemListings">LIST</Link>
         </div>
       </motion.header>
       {/* https://www.framer.com/api/motion/animate-presence/ */}
@@ -48,6 +50,7 @@ const Routes = () => {
           <Route exact path="/" component={App} />
           <Route exact path="/GridGallery" component={GridGallery} />
           <Route exact path="/BlogPosts" component={BlogPosts} />
+          <Route exact path="/ItemListings" component={ItemListings} />
         </Switch>
       </AnimatePresence>
       {/* https://www.framer.com/api/motion/animate-shared-layout/ */}
