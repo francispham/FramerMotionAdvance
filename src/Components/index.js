@@ -6,6 +6,8 @@ import Slide from "./Slide";
 import DragItem from "./DragItem";
 import HandleDragItem from "./HandleDragItem";
 
+import { SignUp, SignIn } from "./Auth";
+
 export { 
-  Drawer, Fade, Loading, Scale, Slide, DragItem, HandleDragItem
+  Drawer, Fade, Loading, Scale, Slide, DragItem, HandleDragItem, SignIn, SignUp
 };
