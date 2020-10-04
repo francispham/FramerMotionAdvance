@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useInterval from '@use-it/interval';
+import Confetti from 'react-confetti';
 
 const CountDown = ({ setCountDown }) => {
   const [count, setCount] = useState(10);
-  
+  const [isComplete, setIsComplete] = useState(false);
+
   useInterval(() => {
     setCount((prevCount) => {
       if (prevCount > 0) {
         return prevCount -1;
       };
+      setIsComplete(true);
     });
   }, 1000);
 
@@ -19,6 +22,7 @@ const CountDown = ({ setCountDown }) => {
       className="count-down"
       onClick={() => setCountDown(false)}
     >
+      {isComplete && <Confetti />}
       <motion.h3  
         style={{ position: "absolute", top: 0 }}
         layoutId="count-down">Count Down Feature</motion.h3>
