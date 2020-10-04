@@ -9,12 +9,13 @@ import {
 
 import './styles.css';
 import { 
-  Loading, SignIn, SignUp, RouteTransition, AnimatedSwitch 
+  Loading, SignIn, SignUp, RouteTransition, AnimatedSwitch, CountDown
 } from './Components';
 
 const Routes = () => {
   const [loggedIn, setIsLoggedIn] = useState("");
   const [ isLoading, setIsLoading ] = useState(false);
+  const [ isCountDown, setCountDown ] = useState(false);
 
   const { y } = useWindowScrollPosition({
     throttle: 500
@@ -90,15 +91,25 @@ const Routes = () => {
       <AnimatePresence>
         {isLoading && <Loading setIsLoading = {setIsLoading}/>}
       </AnimatePresence>
+      <AnimatePresence>
+        {isCountDown && <CountDown setCountDown = {setCountDown}/>}
+      </AnimatePresence>
       <motion.footer 
         layoutId="footer"
-        onClick={() => setIsLoading(true)}
       >
         <motion.h1 
           layoutId="logo" 
           className="fake-logo"
+          onClick={() => setIsLoading(true)}
         >
           Animating Loading Feature
+        </motion.h1>
+        <motion.h1 
+          layoutId="count-down" 
+          className="fake-logo"
+          onClick={() => setCountDown(true)}
+        >
+          Count Down Feature
         </motion.h1>
       </motion.footer>
     </AnimateSharedLayout>

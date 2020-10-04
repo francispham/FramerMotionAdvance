@@ -107,7 +107,7 @@ footer {
   bottom: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   --footerTextColor: var(--lightGrey);
   color: var(--footerTextColor);
   background: var(--footerBackground);
@@ -436,4 +436,18 @@ tbody tr:last-child {
   flex: 1;
   max-width: 500px;
   align-self: flex-start;
+}
+
+.count-down {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--darkGrey);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
