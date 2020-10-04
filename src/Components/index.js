@@ -7,7 +7,9 @@ import DragItem from "./DragItem";
 import HandleDragItem from "./HandleDragItem";
 
 import { SignUp, SignIn } from "./Auth";
+import { RouteTransition, AnimatedSwitch } from "./AnimatedRoutes";
 
 export { 
-  Drawer, Fade, Loading, Scale, Slide, DragItem, HandleDragItem, SignIn, SignUp
+  Drawer, Fade, Loading, Scale, Slide, DragItem, HandleDragItem, 
+  SignIn, SignUp, RouteTransition, AnimatedSwitch
 };
