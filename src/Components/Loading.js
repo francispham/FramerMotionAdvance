@@ -11,10 +11,13 @@ const Loading = ({ setIsLoading }) => {
       <motion.h3 layoutId="logo">Animating Loading Feature</motion.h3>
         <motion.div exit={{ opacity: 0 }} >
           <motion.div
-            animate={{ width: "100%" }}
+            initial={{ x: -200 }}
+            animate={{ x: 200 }}
             transition={{
-              flip: Infinity, // 'Infinity' is a JavaScript keyword!!!
-              duration: 1
+              repeat: Infinity,    // repeat - Infinity, number
+              type: "spring",
+              repeatDelay: 1,
+              repeatType: "mirror" // repeatType - loop, reverse, mirror
             }}
             style={{
               background: "var(--primary)",
